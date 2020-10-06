@@ -1,6 +1,17 @@
-- name: Install all security updates with automatic reboots
+
+---
+- hosts: all
   gather_facts: no
-  win_updates:
-    category_names:
-    - SecurityUpdates
-    reboot: yes
+  tasks:
+  - name: Install all security, critical and rollup updates without a scheduled task
+    win_updates:
+      category_names:
+      - CriticalUpdates
+      - SecurityUpdates
+      - UpdateRollups
+      whitelist:
+      - KB4576750
+      - KB4571694
+      log_path: C:\Temp\ansible-windows-update.txt
+      state: installed
+      reboot: yes
