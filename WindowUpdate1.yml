@@ -7,7 +7,6 @@
       category_names:
       - CriticalUpdates
       - SecurityUpdates
-      - UpdateRollups
        whitelist:
         - KB4576750
       log_path: C:\Temp\ansible-windows-update.txt
