@@ -1,13 +1,13 @@
----
-- hosts: all
-  gather_facts: no
+- name: Run Updates on Directory Servers then wait 15 mins
+  hosts: directoryservers
+  connection: winrm
+
   tasks:
-  - name: Install only particular updates based on the KB numbers
-  win_updates:
+    win_updates:
       category_names:
-      - CriticalUpdates
-      - SecurityUpdates
-      log_path: C:\Temp\ansible-windows-update.txt
-      state: installed
-      reboot: yes
-      reboot_timeout: 1000
+        - CriticalUpdates
+        - SecurityUpdates
+      blacklist:
+        - Microsoft Silverlight
+    reboot: yes
+    reboot_timeout: 900
