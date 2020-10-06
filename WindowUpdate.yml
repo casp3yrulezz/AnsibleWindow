@@ -8,5 +8,6 @@
         - SecurityUpdates
       whitelist:
         - KB4576750
+    state: installed
     reboot: yes
     reboot_timeout: 1000
