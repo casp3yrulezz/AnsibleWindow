@@ -4,8 +4,9 @@
   tasks:
   - name: Install only particular updates based on the KB numbers
    win_updates:
-    category_name:
     - SecurityUpdates
+    whitelist:
+        - KB4576750
       log_path: C:\Temp\ansible-windows-update.txt
       state: installed
       reboot: yes
