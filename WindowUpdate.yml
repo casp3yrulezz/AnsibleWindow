@@ -2,7 +2,6 @@
   hosts: all
   gather_facts: no
   tasks:
-	- name: Install Selected security, critical  updates without a scheduled task
     win_updates:
       category_names:
         - CriticalUpdates
