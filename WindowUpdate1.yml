@@ -3,12 +3,11 @@
   gather_facts: no
   tasks:
   - name: Install all security, critical and rollup updates without a scheduled task
-    win_updates:
-      category_names:
-      - CriticalUpdates
-      - SecurityUpdates
-       whitelist:
-        - KB4576750
+   win_updates:
+    category_name:
+    - SecurityUpdates
+    whitelist:
+    - KB4576750
       log_path: C:\Temp\ansible-windows-update.txt
       state: installed
       reboot: yes
