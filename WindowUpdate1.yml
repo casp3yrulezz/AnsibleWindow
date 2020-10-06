@@ -3,8 +3,10 @@
   gather_facts: no
   tasks:
   - name: Install only particular updates based on the KB numbers
-   win_updates:
-    - SecurityUpdates
+  win_updates:
+      category_names:
+      - CriticalUpdates
+      - SecurityUpdates
       log_path: C:\Temp\ansible-windows-update.txt
       state: installed
       reboot: yes
