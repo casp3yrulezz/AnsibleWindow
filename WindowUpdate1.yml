@@ -1,4 +1,5 @@
 - name: Install all security updates with automatic reboots
+  gather_facts: no
   win_updates:
     category_names:
     - SecurityUpdates
