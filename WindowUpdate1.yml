@@ -12,6 +12,6 @@
       whitelist:
       - KB4576750
       - KB4571694
-      log_path: C:\Temp\ansible-windows-update.txt
+      log_path: C:\ansible-windows-update.txt
       state: installed
       reboot: yes
