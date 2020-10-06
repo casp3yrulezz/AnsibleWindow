@@ -2,7 +2,7 @@
 - hosts: all
   gather_facts: no
   tasks:
-  - name: Install all security, critical and rollup updates without a scheduled task
+  - name: Install only particular updates based on the KB numbers
    win_updates:
     category_name:
     - SecurityUpdates
