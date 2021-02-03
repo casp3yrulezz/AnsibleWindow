@@ -1,16 +1,13 @@
-#- name: Run Updates on Terminal Servers then wait 7 mins
-  hosts: Win
- # connection: winrm
-
+hosts: Win
+  gather_facts: no
   tasks:
+	- name: Install Selected security, critical  updates without a scheduled task
     win_updates:
       category_names:
-        - Application
         - CriticalUpdates
-        - DefinitionUpdates
         - SecurityUpdates
-        - Updates
       whitelist:
         - KB4093120
+	state: installed
     reboot: yes
-    reboot_timeout: 420
+    reboot_timeout: 1000
