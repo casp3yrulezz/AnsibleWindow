@@ -1,5 +1,5 @@
 ---
-- hosts: AllWin
+- hosts: all
   tasks: 
   - name: Get hotfix 
     win_url: 
