@@ -1,7 +1,4 @@
----
-#- name: Install hotfix without validating the KB and Identifier
- - host: Win
+- name: Install update
   community.windows.win_hotfix:
-    source: C:\temp\windows10.0-kb4598229-x86_dd943c5d69d146026f29d2cbe9e01c239c6ea56d.msu
+    source: "C:\Temp\windows10.0-kb4598229-x86_dd943c5d69d146026f29d2cbe9e01c239c6ea56d.msu"
     state: present
-  register: hotfix_install
