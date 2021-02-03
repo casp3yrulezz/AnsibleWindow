@@ -1,14 +1,18 @@
 ---
+# Ansible playbook to run Windows Update and restart, if required
+#
+# http://docs.ansible.com/ansible/win_updates_module.html
+# https://docs.ansible.com/ansible/win_reboot_module.html
+
+- name:  Windows Update
   hosts: all
-  gather_facts: no
+  gather_facts: false
   tasks:
-	- name: Install Selected security, critical  updates without a scheduled task
-    win_updates:
-      category_names:
-        - CriticalUpdates
-        - SecurityUpdates
-      whitelist:
-        - KB4093120
-	state: installed
-    reboot: yes
-    reboot_timeout: 1000
+    - name: Running Windows Update
+      win_updates:
+        category_names: ['SecurityUpdates','CriticalUpdates','UpdateRollups', 'Updates', 'DefinitionUpdates']
+        #category_names: ['SecurityUpdates']
+      register: result
+
+    # output results
+    - debug: var=result
