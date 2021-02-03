@@ -1,13 +1,2 @@
-hosts: all
-  gather_facts: no
-  tasks:
-	- name: Install Selected security, critical  updates without a scheduled task
-    win_updates:
-      category_names:
-        - CriticalUpdates
-        - SecurityUpdates
-      whitelist:
-        - KB4093120
-	state: installed
-    reboot: yes
-    reboot_timeout: 1000
+- name: Example from an Ansible Playbook
+  win_ping:
