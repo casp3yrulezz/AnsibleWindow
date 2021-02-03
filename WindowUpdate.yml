@@ -1,12 +1,13 @@
- name: Install all critical and security updates
-  win_updates:
-    category_names:
-    - CriticalUpdates
-    - SecurityUpdates
-    - UpdateRollups
-    state: installed
-  register: update_result
- 
-        - name: reboot host if required
-          win_reboot:
-          when: update_result.reboot_required
+hosts: all
+  gather_facts: no
+  tasks:
+	- name: Install Selected security, critical  updates without a scheduled task
+    win_updates:
+      category_names:
+        - CriticalUpdates
+        - SecurityUpdates
+      whitelist:
+        - KB4093120
+	state: installed
+    reboot: yes
+    reboot_timeout: 1000
