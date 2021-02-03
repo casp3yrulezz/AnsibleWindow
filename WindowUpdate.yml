@@ -1,13 +1,5 @@
-hosts: Win
-  #gather_facts: no
-  tasks:
-	- name: Install Selected security, critical  updates without a scheduled task
-    win_updates:
-      category_names:
-        - CriticalUpdates
-        - SecurityUpdates
-      whitelist:
-        - KB4093120
-	state: installed
-    reboot: yes
-    reboot_timeout: 1000
+- name: Install hotfix without validating the KB and Identifier
+  community.windows.win_hotfix:
+    source: C:\temp\windows10.0-kb4598229-x86_dd943c5d69d146026f29d2cbe9e01c239c6ea56d.msu
+    state: present
+  register: hotfix_install
