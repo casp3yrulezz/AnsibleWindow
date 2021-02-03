@@ -1,4 +1,4 @@
-- name: Install the Visual C thingy
+- name: Install Window Patch
   ansible.windows.win_package:
     path: http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/01/windows10.0-kb4598230-x64_f69498ce0cac1307eb0e6701ca334ff332364289.msu
     arguments: /install /passive /norestart
