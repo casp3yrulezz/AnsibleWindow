@@ -1,1 +1,1 @@
-ansible all -i hosts_wintel -m win_ping
+ansible Win -i hosts_wintel -m win_ping
