@@ -1,17 +1,12 @@
-
 ---
-- hosts: all
-  gather_facts: no
-  tasks:
-  - name: Install all security, critical and rollup updates without a scheduled task
-    win_updates:
-      category_names:
-      - CriticalUpdates
-      - SecurityUpdates
-      - UpdateRollups
-      whitelist:
-      - KB4576750
-      - KB4571694
-      log_path: C:\ansible-windows-update.txt
-      state: installed
-      reboot: yes
+- hosts: AllWin
+  tasks: 
+  - name: Get hotfix 
+    win_url: 
+     url: http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/01/windows10.0-kb4598230-x86_54c413174df931928c180e53a2d43f19dab00da2.msu dest: C:\Temp\kb4598230.msu 
+  - name: Install hotfix 
+    win_hotfix: 
+     source: C:\temp\kb4598230.ms 
+     state: present 
+    register: needreboot 
+  - win_reboot: when: needreboot.reboot_required
