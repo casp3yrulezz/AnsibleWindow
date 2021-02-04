@@ -1,1 +1,9 @@
-ansible all -i hosts -m win_ping
+---
+- hosts: Win
+  tasks:
+
+    - name: Install hotfix without validating the KB and Identifier
+      community.windows.win_hotfix:
+        source: C:\Temp\windows10.0-kb4585207-x64-ndp48_62f54bedd78999c5da431111d869fc9f273b991f.msu
+        state: present
+  register: hotfix_install
