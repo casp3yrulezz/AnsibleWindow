@@ -4,6 +4,6 @@
 
   - name: Copy a single file where the source is on the remote host
     ansible.windows.win_copy:
-      src: \\192.168.3.2\Test\windows10.0-kb4589210-v2-x64_bbbf54336d6e22da5de8d63891401d8f6077d2ce.msu
+      src: \\ODYSOLBN.odysol.com\Test\windows10.0-kb4589210-v2-x64_bbbf54336d6e22da5de8d63891401d8f6077d2ce.msu
       dest: C:\temp\
       remote_src: yes
