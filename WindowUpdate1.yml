@@ -4,6 +4,6 @@
 
   - name: Install hotfix without validating the KB and Identifier
     community.windows.win_hotfix:
-      source: C:\Temp\windows10.0-kb4585207-x64-ndp48_62f54bedd78999c5da431111d869fc9f273b991f.msu
+      source: C:\Temp\windows10.0-kb4598229-x86_dd943c5d69d146026f29d2cbe9e01c239c6ea56d.msu
       state: present
     register: hotfix_install
