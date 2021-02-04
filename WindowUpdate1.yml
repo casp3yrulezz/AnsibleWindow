@@ -1,5 +1,5 @@
 ---
-- hosts: Win
+- hosts: all
   tasks:
 
     - name: Install hotfix without validating the KB and Identifier
