@@ -1,9 +1,5 @@
 ---
 - hosts: Win
-  become: yes
-  become_method: runas
-  become_user: System
-  become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   tasks:
   
   - name: Copy a single file where the source is on the remote host
