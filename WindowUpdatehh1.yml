@@ -1,1 +1,1 @@
-ansible Win -i hosts_wintel -m win_ping
+
