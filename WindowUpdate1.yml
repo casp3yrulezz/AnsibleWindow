@@ -1,9 +1,1 @@
----
-- hosts: Win
-  tasks:
 
-  - name: Install hotfix without validating the KB and Identifier
-    community.windows.win_hotfix:
-      source: C:\Temp\windows10.0-kb4589210-v2-x64_bbbf54336d6e22da5de8d63891401d8f6077d2ce.msu
-      state: present
-    register: hotfix_install
