@@ -2,7 +2,7 @@
 - hosts: Win
   become: yes
   become_method: runas
-  become_user: dparmar@ODYSOLVD.COM
+  become_user: System
   become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   tasks:
   
