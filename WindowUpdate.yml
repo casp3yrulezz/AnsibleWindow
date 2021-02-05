@@ -1,15 +1,1 @@
----
-- hosts: Win
-  tasks:
-  
-  - name: Copy a single file where the source is on the remote host
-    ansible.windows.win_copy:
-      src: \\odysolbn.ODYSOLVD.COM\c$\Test\windows10.0-kb4535680-x64_980ed67d1aaeeb5bb8a6b79e68438bd402865443.msu
-      dest: C:\temp\
-      remote_src: true
-      
-  - name: Install hotfix without validating the KB and Identifier
-    community.windows.win_hotfix:
-      source: C:\Temp\windows10.0-kb4535680-x64_980ed67d1aaeeb5bb8a6b79e68438bd402865443.msu
-      state: present
-    register: hotfix_instal
+
