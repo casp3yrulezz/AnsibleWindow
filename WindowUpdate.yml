@@ -3,7 +3,6 @@
   become: yes
   become_method: runas
   become_user: dparmar@ODYSOLVD.COM
-  become_password: Kahonakaho@123
   become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   tasks:
   
