@@ -1,9 +1,9 @@
 ---
 - hosts: Win
-  tasks:
   become: yes
   become_method: runas
-
+  tasks:
+  
   - name: Copy a single file where the source is on the remote host
     ansible.windows.win_copy:
       src: \\odysolbn.ODYSOLVD.COM\c$\Test\windows10.0-kb4589210-v2-x64_bbbf54336d6e22da5de8d63891401d8f6077d2ce.msu
