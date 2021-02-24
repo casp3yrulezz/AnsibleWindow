@@ -1,1 +1,10 @@
+---
+- hosts: Win
+  tasks:
+
+  - name: Set service startup mode to auto and ensure it is started
+    ansible.windows.win_service:
+        name: W3SVC
+        start_mode: Manual
+        state: stopped
 
